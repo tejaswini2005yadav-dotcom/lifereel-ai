@@ -6,8 +6,8 @@
 export class LifeReelAPI {
   constructor() {
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    // Replace the URL below with your actual deployed Render backend service URL
-    this.baseUrl = isLocal ? 'http://localhost:8000' : 'https://lifereel-backend.onrender.com';
+    // Expose local backend securely to the Render frontend via ngrok
+    this.baseUrl = isLocal ? 'http://localhost:8000' : 'https://expediter-unpiloted-tidal.ngrok-free.dev';
   }
 
   /**
