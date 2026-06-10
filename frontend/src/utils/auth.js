@@ -5,7 +5,9 @@ export class AuthStore {
   constructor() {
     this.userKey = 'lifereel_current_user_v2';
     this.tokenKey = 'lifereel_jwt_token';
-    this.baseUrl = 'http://localhost:8000';
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    // Replace the URL below with your actual deployed Render backend service URL
+    this.baseUrl = isLocal ? 'http://localhost:8000' : 'https://lifereel-backend.onrender.com';
   }
 
   getCurrentUser() {
